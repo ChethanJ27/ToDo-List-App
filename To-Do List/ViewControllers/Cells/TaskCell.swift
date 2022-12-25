@@ -11,10 +11,13 @@ import UIKit
 class TaskCell: UITableViewCell {
     
     @IBOutlet weak var titleLabel: UILabel!
-    
-    @IBOutlet weak var dueDateLabel: UILabel!
+    var viewModel: TaskListViewModel = TaskListViewModel()
     
     override func awakeFromNib() {
         super.awakeFromNib()
+        viewModel.$tasks
+            .sink { [weak self] tasks in
+                print(tasks)
+            }
     }
 }

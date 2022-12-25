@@ -23,6 +23,7 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
         let storyboard = UIStoryboard(name: "TaskList", bundle: nil)
         let vc = storyboard.instantiateViewController(withIdentifier: "TaskListVC") as! TaskListVC
         vc.viewModel = TaskListViewModel()
+        vc.title = "ToDoo"
         let navVC = UINavigationController(rootViewController: vc)
         
         window.rootViewController = navVC

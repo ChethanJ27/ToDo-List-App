@@ -16,10 +16,11 @@
 		B95DEDF92945BEB300BEEFEE /* To_Do_ListUITestsLaunchTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = B95DEDF82945BEB300BEEFEE /* To_Do_ListUITestsLaunchTests.swift */; };
 		B95DEE0D2945C12300BEEFEE /* TaskListVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = B95DEE0C2945C12300BEEFEE /* TaskListVC.swift */; };
 		B95DEE0F2945C14500BEEFEE /* TaskListViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = B95DEE0E2945C14500BEEFEE /* TaskListViewModel.swift */; };
-		B95DEE112945C20C00BEEFEE /* Task.swift in Sources */ = {isa = PBXBuildFile; fileRef = B95DEE102945C20C00BEEFEE /* Task.swift */; };
+		B95DEE112945C20C00BEEFEE /* TaskModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = B95DEE102945C20C00BEEFEE /* TaskModel.swift */; };
 		B95DEE142945C2D200BEEFEE /* TaskCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = B95DEE132945C2D200BEEFEE /* TaskCell.swift */; };
 		B95DEE162945C32700BEEFEE /* TaskList.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = B95DEE152945C32700BEEFEE /* TaskList.storyboard */; };
 		B95DEE182945CB7300BEEFEE /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = B95DEE172945CB7300BEEFEE /* Main.storyboard */; };
+		B9C057D72950CCEB00680CE7 /* TaskService.swift in Sources */ = {isa = PBXBuildFile; fileRef = B9C057D62950CCEB00680CE7 /* TaskService.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -53,10 +54,11 @@
 		B95DEDF82945BEB300BEEFEE /* To_Do_ListUITestsLaunchTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = To_Do_ListUITestsLaunchTests.swift; sourceTree = "<group>"; };
 		B95DEE0C2945C12300BEEFEE /* TaskListVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TaskListVC.swift; sourceTree = "<group>"; };
 		B95DEE0E2945C14500BEEFEE /* TaskListViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TaskListViewModel.swift; sourceTree = "<group>"; };
-		B95DEE102945C20C00BEEFEE /* Task.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Task.swift; sourceTree = "<group>"; };
+		B95DEE102945C20C00BEEFEE /* TaskModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TaskModel.swift; sourceTree = "<group>"; };
 		B95DEE132945C2D200BEEFEE /* TaskCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TaskCell.swift; sourceTree = "<group>"; };
 		B95DEE152945C32700BEEFEE /* TaskList.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = TaskList.storyboard; sourceTree = "<group>"; };
 		B95DEE172945CB7300BEEFEE /* Main.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Main.storyboard; sourceTree = "<group>"; };
+		B9C057D62950CCEB00680CE7 /* TaskService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TaskService.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -150,7 +152,7 @@
 		B95DEE062945BF2700BEEFEE /* Models */ = {
 			isa = PBXGroup;
 			children = (
-				B95DEE102945C20C00BEEFEE /* Task.swift */,
+				B95DEE102945C20C00BEEFEE /* TaskModel.swift */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -175,6 +177,7 @@
 		B95DEE092945BF4F00BEEFEE /* Services */ = {
 			isa = PBXGroup;
 			children = (
+				B9C057D62950CCEB00680CE7 /* TaskService.swift */,
 			);
 			path = Services;
 			sourceTree = "<group>";
@@ -322,8 +325,9 @@
 				B95DEE142945C2D200BEEFEE /* TaskCell.swift in Sources */,
 				B95DEDD62945BEB100BEEFEE /* AppDelegate.swift in Sources */,
 				B95DEE0F2945C14500BEEFEE /* TaskListViewModel.swift in Sources */,
+				B9C057D72950CCEB00680CE7 /* TaskService.swift in Sources */,
 				B95DEDD82945BEB100BEEFEE /* SceneDelegate.swift in Sources */,
-				B95DEE112945C20C00BEEFEE /* Task.swift in Sources */,
+				B95DEE112945C20C00BEEFEE /* TaskModel.swift in Sources */,
 				B95DEE0D2945C12300BEEFEE /* TaskListVC.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
