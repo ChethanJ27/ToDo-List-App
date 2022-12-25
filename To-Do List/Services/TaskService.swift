@@ -16,39 +16,10 @@ protocol TaskService {
     func retrieve()-> [TaskModel]
     
     func saveAllTasks(tasks: [TaskModel])
+    
+    func createTask(name:String,completed: Bool, createdAt: Date) -> TaskModel 
 }
 
-
-class TaskServiceUserDefaults: TaskService {
-    
-    
-    static let sharedInstance = TaskServiceUserDefaults()
-    
-    var taskModels: [TaskModel] = []
-    
-    
-    func retrieve() -> [TaskModel] {
-        guard let encodedData = UserDefaults.standard.array(forKey: "Tasks") as? [Data] else {
-            return []
-        }
-        
-        return encodedData.map { try! JSONDecoder().decode(TaskModel.self, from: $0) }
-    }
-    
-    func saveTask(model: TaskModel) {
-        var tasks = retrieve()
-        tasks.append(model)
-        let data = tasks.map { try? JSONEncoder().encode($0) }
-        UserDefaults.standard.set(data, forKey: "Tasks")
-    }
-    
-    func saveAllTasks(tasks: [TaskModel]) {
-        let data = tasks.map { try? JSONEncoder().encode($0) }
-        UserDefaults.standard.set(data, forKey: "Tasks")
-    }
-    
-    func delete(index: Int,tasks:[TaskModel]) {
-//        tasks.remove(at: index)
-        saveAllTasks(tasks: tasks)
-    }
+class ServiceManager {
+    static let sharedInstance: TaskService = TaskServiceUserDefaults()
 }
