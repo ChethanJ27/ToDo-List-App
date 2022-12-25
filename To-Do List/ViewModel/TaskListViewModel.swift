@@ -10,21 +10,27 @@ import Combine
 
 class TaskListViewModel: ObservableObject {
     private var cancellables = Set<AnyCancellable>()
+    
+    let serviceApi = ServiceManager.sharedInstance
 
     @Published var tasks: [TaskModel] = []
     
+    func createTask(name:String,completed: Bool, createdAt: Date) -> TaskModel {
+        return serviceApi.createTask(name: name, completed: completed, createdAt: createdAt)
+    }
+    
     func retrieveTasks() {
-        tasks = TaskServiceUserDefaults.sharedInstance.retrieve()
+        tasks = serviceApi.retrieve()
     }
 
     func addTask(_ task: TaskModel) {
-        TaskServiceUserDefaults.sharedInstance.saveTask(model: task)
+        serviceApi.saveTask(model: task)
         retrieveTasks()
     }
 
     func removeTask(at index: Int) {
         self.tasks.remove(at: index)
-        TaskServiceUserDefaults.sharedInstance.delete(index: index, tasks: self.tasks)
+        serviceApi.delete(index: index, tasks: self.tasks)
     }
 
     func updateTask(at index: Int, with task: TaskModel) {

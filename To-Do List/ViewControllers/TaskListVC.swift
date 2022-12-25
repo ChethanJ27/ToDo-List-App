@@ -46,11 +46,11 @@ class TaskListVC: UIViewController {
         let saveAction = UIAlertAction(title: "Save", style: UIAlertAction.Style.default, handler: { alert -> Void in
             let title = alertController.textFields?[0].text
             if title != nil && title != "" {
-                self.viewModel.addTask(TaskModel(title: title!, createdAt: Date(), completed: false))
+                let task: TaskModel = self.viewModel.createTask(name: title!, completed: false, createdAt: Date())
+                self.viewModel.addTask(task)
             }
             else
             {
-                
                 self.dismiss(animated: false, completion: nil)
             }
         })
