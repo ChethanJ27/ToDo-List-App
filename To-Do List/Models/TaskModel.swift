@@ -10,9 +10,9 @@ import Foundation
 
 protocol TaskModel {
 
-    var title: String? { get }
+    var title: String? { get set }
     var createdAt: Date? { get }
-    var completed: Bool { get }
+    var completed: Bool { get set }
 
 }
 
@@ -20,6 +20,6 @@ struct TaskModelUD: TaskModel,Codable {
 
     var title: String?
     var createdAt: Date?
-    let completed: Bool
+    var completed: Bool
 
 }

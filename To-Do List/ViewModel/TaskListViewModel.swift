@@ -35,6 +35,8 @@ class TaskListViewModel: ObservableObject {
 
     func updateTask(at index: Int, with task: TaskModel) {
         tasks[index] = task
+        serviceApi.saveAllTasks(tasks: tasks)
+        retrieveTasks()
     }
 }
 

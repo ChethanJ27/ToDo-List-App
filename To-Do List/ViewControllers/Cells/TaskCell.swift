@@ -10,14 +10,22 @@ import UIKit
 
 class TaskCell: UITableViewCell {
     
+    @IBOutlet weak var checkMarkBtn: UIButton!
+    
     @IBOutlet weak var titleLabel: UILabel!
-    var viewModel: TaskListViewModel = TaskListViewModel()
+    
     
     override func awakeFromNib() {
         super.awakeFromNib()
-        viewModel.$tasks
-            .sink { [weak self] tasks in
-                print(tasks)
-            }
+    }
+    
+    func setupBtnImage(completed:Bool) {
+        if completed {
+            checkMarkBtn.setImage(UIImage(systemName: "checkmark.circle.fill"), for: .normal)
+            checkMarkBtn.configuration?.baseForegroundColor = UIColor.tintColor
+        } else {
+            checkMarkBtn.setImage(UIImage(systemName: "xmark.circle.fill"), for: .normal)
+            checkMarkBtn.configuration?.baseForegroundColor = UIColor.red
+        }
     }
 }

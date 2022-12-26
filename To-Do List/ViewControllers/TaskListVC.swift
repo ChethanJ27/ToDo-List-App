@@ -81,16 +81,23 @@ extension TaskListVC: UITableViewDataSource{
         let task = viewModel.tasks[indexPath.row]
         
         cell.titleLabel.text = task.title
-        
+        let fLAG = task.completed
+        cell.setupBtnImage(completed: fLAG)
         return cell
     }
 }
 
 extension TaskListVC: UITableViewDelegate {
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-        _ = viewModel.tasks[indexPath.row]
+        let task = viewModel.tasks[indexPath.row]
         // Show the detail view for the selected task
-        tableView.deselectRow(at: indexPath, animated: true)
+        let storyboard = UIStoryboard(name: "TaskList", bundle: .main)
+        let vc = storyboard.instantiateViewController(withIdentifier: "TaskDetailVC") as! TaskDetailVC
+        vc.currentTask = task
+        vc.index = indexPath.row
+        vc.viewModel = viewModel
+        vc.modalPresentationStyle = .overFullScreen
+        self.present(vc, animated: false)
     }
     
     func tableView(_ tableView: UITableView, trailingSwipeActionsConfigurationForRowAt indexPath: IndexPath) -> UISwipeActionsConfiguration? {
