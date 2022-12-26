@@ -10,16 +10,16 @@ import Foundation
 
 protocol TaskModel {
 
-    var title: String { get }
-    var createdAt: Date { get }
+    var title: String? { get }
+    var createdAt: Date? { get }
     var completed: Bool { get }
 
 }
 
 struct TaskModelUD: TaskModel,Codable {
 
-    let title: String
-    let createdAt: Date
+    var title: String?
+    var createdAt: Date?
     let completed: Bool
 
 }

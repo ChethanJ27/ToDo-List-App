@@ -21,5 +21,5 @@ protocol TaskService {
 }
 
 class ServiceManager {
-    static let sharedInstance: TaskService = TaskServiceUserDefaults()
+    static let sharedInstance: TaskService = TasksServiceCoreData()
 }

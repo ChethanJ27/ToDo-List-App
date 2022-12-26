@@ -42,7 +42,8 @@ class TaskServiceUserDefaults: TaskService {
     }
 
     func delete(index: Int,tasks:[TaskModel]) {
-//        tasks.remove(at: index)
-        saveAllTasks(tasks: tasks)
+        var t = tasks
+        t.remove(at: index)
+        saveAllTasks(tasks: t)
     }
 }
