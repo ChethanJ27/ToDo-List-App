@@ -29,12 +29,14 @@ class TaskListViewModel: ObservableObject {
     }
 
     func removeTask(at index: Int) {
-        self.tasks.remove(at: index)
         serviceApi.delete(index: index, tasks: self.tasks)
+        retrieveTasks()
     }
 
     func updateTask(at index: Int, with task: TaskModel) {
         tasks[index] = task
+        serviceApi.saveAllTasks(tasks: tasks)
+        retrieveTasks()
     }
 }
 
